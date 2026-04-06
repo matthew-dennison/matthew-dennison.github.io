@@ -57,7 +57,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 1.25rem;
+    padding: 1rem 1.25rem;
     z-index: 100;
 }
 
@@ -72,13 +72,16 @@ p {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+    gap: 0;
 }
 
 .nav-right {
     margin-left: auto;
 }
 
-/* ====== UNDERLINE EFFECT ====== */
 .navbar a {
     position: relative;
     color: white;
@@ -87,6 +90,7 @@ p {
     transition: color 0.3s;
 }
 
+/* ====== UNDERLINE EFFECT ====== */
 .navbar a::after {
     content: '';
     position: absolute;
