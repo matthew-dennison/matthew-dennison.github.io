@@ -57,7 +57,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.25rem;
+    padding: 1rem 2.5rem;
     z-index: 100;
 }
 
