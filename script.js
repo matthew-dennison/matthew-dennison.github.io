@@ -1,17 +1,23 @@
-const arrow = document.getElementById("scrollArrow");
-const about = document.getElementById("about");
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-center a');
 
-// Click arrow → scroll to about
-arrow.addEventListener("click", () => {
-  about.scrollIntoView({ behavior: "smooth" });
-});
+function activateNavLink() {
+    let scrollPos = window.scrollY + window.innerHeight / 2; // middle of viewport
 
-// Fade in "About Me" on scroll
-window.addEventListener("scroll", () => {
-  const trigger = window.innerHeight * 0.8;
-  const aboutTop = about.getBoundingClientRect().top;
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
 
-  if (aboutTop < trigger) {
-    about.classList.add("show");
-  }
-});
+        const id = section.getAttribute('id');
+        const link = document.querySelector(`.nav-center a[href="#${id}"]`);
+
+        if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', activateNavLink);
+window.addEventListener('load', activateNavLink);

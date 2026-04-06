@@ -1,99 +1,166 @@
+/* ====== GLOBAL STYLES ====== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Roboto Mono', monospace;
 }
 
 body {
-  background: #f5f5f5;
-  color: #111;
+    background-color: rgb(23, 27, 36);
+    color: white;
 }
 
-/* NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 50px;
+/* ====== HEADINGS & TEXT ====== */
+h1, h2, h3 {
+    text-align: center;
+    text-shadow: 2px 2px 16px #dfdfdf20;
 }
 
-nav ul {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-  font-weight: bold;
+h1 {
+    font-weight: 900;
+    font-size: 6rem;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
 }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #111;
-  color: white;
+h2 {
+    font-weight: 500;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
 }
 
-.hero-content {
-  padding: 80px 50px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+h3 {
+    font-weight: 900;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
 }
 
-.hero h1 {
-  font-size: 48px;
-  font-weight: bold;
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 600px;
+    margin: 0.5rem auto 1rem auto;
 }
 
-.hero p {
-  margin-top: 10px;
-  font-weight: bold;
+/* ====== NAVBAR ====== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1.25rem;
+    z-index: 100;
 }
 
-/* ARROW */
-.arrow {
-  text-align: center;
-  font-size: 30px;
-  opacity: 0.4;
-  animation: bounce 1.5s infinite;
-  cursor: pointer;
-  margin-bottom: 20px;
+.nav-left, .nav-center, .nav-right {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
 }
 
-/* Arrow animation */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* ABOUT SECTION */
-.about {
-  padding: 100px 50px;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 0.8s ease;
+.nav-right {
+    margin-left: auto;
 }
 
-.about.show {
-  opacity: 1;
-  transform: translateY(0);
+/* ====== UNDERLINE EFFECT ====== */
+.navbar a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
 }
 
-.about h2 {
-  margin-bottom: 20px;
-  position: relative;
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: lightgray;
+    left: 0;
+    bottom: -3px;
+    transition: width 0.3s;
 }
 
-.about h2::before {
-  content: "";
-  display: block;
-  width: 100px;
-  height: 2px;
-  background: black;
-  margin: 0 auto 10px;
+.navbar a:hover {
+    color: lightgray;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a.active::after {
+    width: 100%;
+    background: #1e90ff;
+}
+
+/* ====== SECTIONS ====== */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6rem 1.25rem 2rem;
+}
+
+/* ====== HORIZONTAL RULES ====== */
+hr {
+    border: none;
+    height: 2px;
+    background-color: #555;
+    width: 60%;
+    margin: 2rem auto;
+}
+
+/* ====== LISTS ====== */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 0.5rem 0;
+}
+
+/* ====== LINKS IN SECTIONS ====== */
+section a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+section a:hover {
+    color: #63b3ed;
+}
+
+/* ====== RESPONSIVE TYPOGRAPHY ====== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3.5rem;
+        margin-top: 3rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.1rem;
+    }
 }
