@@ -11,14 +11,14 @@ html {
 }
 
 body {
-    background-color: rgb(23, 27, 36);
+    background-color: #171b24;
     color: white;
 }
 
 /* ====== HEADINGS & TEXT ====== */
 h1, h2, h3 {
     text-align: center;
-    text-shadow: 2px 2px 16px #dfdfdf20;
+    text-shadow: 2px 2px 16px rgba(222, 222, 222, 0.125);
 }
 
 h1 {
@@ -108,7 +108,7 @@ p {
 
 .navbar a.active::after {
     width: 100%;
-    background: #1e90ff;
+    background: #526181;
 }
 
 /* ====== SECTIONS ====== */
@@ -125,7 +125,7 @@ section {
 hr {
     border: none;
     height: 2px;
-    background-color: #555;
+    background-color: white;
     width: 60%;
     margin: 2rem auto;
 }
