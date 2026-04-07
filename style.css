@@ -162,6 +162,16 @@ section a:hover {
 }
 
 /* ====== CONTAINERS ====== */
+.image-container, .video-container {
+    margin-bottom: 2rem;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    width: 64rem;
+}
+
 .video-container {
     text-align: center;
     width: 64rem;
