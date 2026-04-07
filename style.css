@@ -59,7 +59,7 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
-    background: black;
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -121,6 +121,32 @@ p {
     background: #526181;
 }
 
+/* ====== ARROW ====== */
+.scroll-arrow {
+    position: absolute;
+    bottom: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    animation: bounce 2s infinite;
+    transition: color 0.3s;
+}
+
+.scroll-arrow:hover {
+    color: lightgray;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, 10px);
+    }
+}
+
 /* ====== SECTIONS ====== */
 section {
     min-height: 100vh;
@@ -129,6 +155,16 @@ section {
     align-items: center;
     justify-content: flex-start;
     padding: 6rem 1.25rem 2rem;
+}
+
+#home {
+    min-height: 100vh;
+    background: 
+        linear-gradient(to bottom, rgba(23, 27, 36, 0) 60%, #171b24 100%),
+        url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* ====== HORIZONTAL RULES ====== */
